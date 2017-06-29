@@ -13,9 +13,9 @@ import { Pipe, PipeTransform } from '@angular/core'
 export class ShortenPipe implements PipeTransform {
   //Logic for the pipe is within the transform method, value is what is based in
   //accordance with what value the pipe is attached to
-  transform(value: any){
-    if(value.length > 15){
-    return value.substr(0, 15) + ' ...';
+  transform(value: any, limit: number){
+    if(value.length > limit){
+    return value.substr(0, limit) + ' ...';
   } else {
      return value;
     }
